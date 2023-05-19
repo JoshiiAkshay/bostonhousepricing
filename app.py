@@ -20,7 +20,7 @@ def predict_api():
     print(data)
     print(np.array(list(data.values())).reshape(1,-1))
     new_data=scalar.transform(np.array(list(data.values())).reshape(1,-1))
-    output=regmodel.predict(new_data)
+    output=regmodel.predict(new_data[0][0:7])
     print(output[0])
     return jsonify(output[0])
 
